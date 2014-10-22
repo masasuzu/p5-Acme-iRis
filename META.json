@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "module for iâRis fan.",
    "author" : [
       "SUZUKI Masashi <m15.suzuki.masashi@gmail.com>"
    ],
@@ -52,5 +52,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/masasuzu/p5-Acme-iRis/issues"
+      },
+      "homepage" : "https://github.com/masasuzu/p5-Acme-iRis",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/masasuzu/p5-Acme-iRis.git",
+         "web" : "https://github.com/masasuzu/p5-Acme-iRis"
+      }
+   },
    "version" : "0.01"
 }

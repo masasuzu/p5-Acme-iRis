@@ -2,6 +2,7 @@ package Acme::iRis;
 use 5.008001;
 use strict;
 use warnings;
+use utf8;
 
 use Acme::iRis::Member;
 
@@ -26,11 +27,24 @@ __END__
 
 =head1 NAME
 
-Acme::iRis - It's new $module
+Acme::iRis - module for i☆Ris fan.
 
 =head1 SYNOPSIS
 
+    use utf8;
+    use feature qw(say);
+    binmode STDOUT, ':utf8';
+
     use Acme::iRis;
+
+
+    for my $member (Acme::iRis->members) {
+        say $member->fullname;
+        say $member->nickname;
+        say $member->color;
+        say $member->birthdate;
+        say $member->birthplace;
+    }
 
 =head1 DESCRIPTION
 

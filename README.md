@@ -1,10 +1,24 @@
 # NAME
 
-Acme::iRis - It's new $module
+Acme::iRis - module for i☆Ris fan.
 
 # SYNOPSIS
 
+    use utf8;
+    use feature qw(say);
+    binmode STDOUT, ':utf8';
+
     use Acme::iRis;
+
+
+
+    for my $member (Acme::iRis->members) {
+        say $member->fullname;
+        say $member->nickname;
+        say $member->color;
+        say $member->birthdate;
+        say $member->birthplace;
+    }
 
 # DESCRIPTION
 
