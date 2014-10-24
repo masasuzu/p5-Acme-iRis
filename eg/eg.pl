@@ -8,11 +8,11 @@ use Acme::iRis;
 binmode STDOUT, ':utf8';
 
 for my $member (Acme::iRis->members) {
-    say $member->fullname;
-    say $member->nickname;
-    say $member->color;
-    say $member->birthdate;
-    say $member->birthplace;
+    $member->say($member->fullname);
+    $member->say($member->nickname);
+    $member->say($member->color);
+    $member->say($member->birthdate);
+    $member->say($member->birthplace);
 }
 
 

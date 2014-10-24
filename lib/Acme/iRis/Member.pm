@@ -1,6 +1,8 @@
 package Acme::iRis::Member;
 use strict;
 use warnings;
+use utf8;
+use feature qw(say);
 use Acme::iRis::Data;
 
 my %_instances;
@@ -25,6 +27,27 @@ sub fullname   { $_[0]->{__fullname}   }
 sub nickname   { $_[0]->{__nickname}   }
 sub color      { $_[0]->{__color}      }
 sub birthplace { $_[0]->{__birthplace} }
+
+our $ANSI_COLOR_MAP = +{
+    orange => "\e[1;31m", # light red
+    yellow => "\e[1;33m", # light yellow
+    purple => "\e[35m",   #magenta
+    red    => "\e[31m",
+    green  => "\e[32m",
+    blue   => "\e[34m",
+    stop   => "\e[0m",
+};
+
+sub colored {
+    my ($self, $target) = @_;
+    return sprintf( "%s%s%s", $ANSI_COLOR_MAP->{$self->color}, $target, $ANSI_COLOR_MAP->{stop});
+}
+
+sub say {
+    my ($self, $target) = @_;
+    say($self->colored($target));
+}
+
 
 sub birthdate {
     my ($self) = @_;

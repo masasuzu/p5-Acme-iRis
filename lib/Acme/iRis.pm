@@ -32,18 +32,17 @@ Acme::iRis - module for i☆Ris fan.
 =head1 SYNOPSIS
 
     use utf8;
-    use feature qw(say);
     binmode STDOUT, ':utf8';
 
     use Acme::iRis;
 
 
     for my $member (Acme::iRis->members) {
-        say $member->fullname;
-        say $member->nickname;
-        say $member->color;
-        say $member->birthdate;
-        say $member->birthplace;
+        $member->say($member->fullname);
+        $member->say($member->nickname);
+        $member->say($member->color);
+        $member->say($member->birthdate);
+        $member->say($member->birthplace);
     }
 
 =head1 DESCRIPTION
