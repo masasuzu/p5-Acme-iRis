@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use utf8;
 
-my $_member = +{
+my $_members = +{
     YamakitaSaki => +{
         fullname => '山北早紀',
         nickname => 'さきさま',
@@ -72,9 +72,24 @@ my $_member = +{
     },
 };
 
+my $_ansi_color_map = +{
+    orange => "\e[1;31m", # light red
+    yellow => "\e[1;33m", # light yellow
+    purple => "\e[35m",   # magenta
+    red    => "\e[31m",
+    green  => "\e[32m",
+    blue   => "\e[34m",
+    stop   => "\e[0m",
+};
+
+for my $m (keys %{$_members}) {
+    $_members->{$m}->{ansi_color_code} = $_ansi_color_map->{$_members->{$m}->{color}};
+}
+
+
 sub member {
     my ($class, $member) = @_;
-    return $_member->{$member} if exists $_member->{$member};
+    return $_members->{$member} if exists $_members->{$member};
     return;
 }
 

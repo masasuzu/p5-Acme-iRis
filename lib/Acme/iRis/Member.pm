@@ -23,24 +23,22 @@ sub instance {
     return $_instances{$class};
 }
 
-sub fullname   { $_[0]->{__fullname}   }
-sub nickname   { $_[0]->{__nickname}   }
-sub color      { $_[0]->{__color}      }
-sub birthplace { $_[0]->{__birthplace} }
+my @methods  = qw(
+    fullname
+    nickname
+    color
+    birthplace
+    ansi_color_code
+);
 
-our $ANSI_COLOR_MAP = +{
-    orange => "\e[1;31m", # light red
-    yellow => "\e[1;33m", # light yellow
-    purple => "\e[35m",   #magenta
-    red    => "\e[31m",
-    green  => "\e[32m",
-    blue   => "\e[34m",
-    stop   => "\e[0m",
-};
+for my $method (@methods) {
+    no strict 'refs';
+    *{__PACKAGE__."::$method"} = sub { $_[0]->{"__$method"} };
+}
 
 sub colored {
     my ($self, $target) = @_;
-    return sprintf( "%s%s%s", $ANSI_COLOR_MAP->{$self->color}, $target, $ANSI_COLOR_MAP->{stop});
+    return $self->ansi_color_code . $target . "\e[0m";
 }
 
 sub say {
