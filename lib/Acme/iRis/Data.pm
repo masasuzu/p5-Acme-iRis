@@ -79,7 +79,6 @@ my $_ansi_color_map = +{
     red    => "\e[31m",
     green  => "\e[32m",
     blue   => "\e[34m",
-    stop   => "\e[0m",
 };
 
 for my $m (keys %{$_members}) {
