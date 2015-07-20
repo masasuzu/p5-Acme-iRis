@@ -1,10 +1,10 @@
 {
-   "abstract" : "module for iâRis fan.",
+   "abstract" : "module for i☆Ris fan.",
    "author" : [
       "SUZUKI Masashi <m15.suzuki.masashi@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.2.0, CPAN::Meta::Converter version 2.142690",
+   "generated_by" : "Minilla/v2.4.1, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],

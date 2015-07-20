@@ -1,4 +1,4 @@
 name = "Acme-iRis"
-# badges = ["travis"]
+badges = ["travis"]
 module_maker="ModuleBuildTiny"
 

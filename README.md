@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/masasuzu/p5-Acme-iRis.svg?branch=master)](https://travis-ci.org/masasuzu/p5-Acme-iRis)
 # NAME
 
 Acme::iRis - module for i☆Ris fan.
