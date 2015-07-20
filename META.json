@@ -42,6 +42,8 @@
       },
       "runtime" : {
          "requires" : {
+            "feature" : "0",
+            "parent" : "0",
             "perl" : "5.008001"
          }
       },
